@@ -1,0 +1,417 @@
+:root {
+  /* Primary */
+  --scissors-gradient-from: hsl(39, 89%, 43%);
+  --scissors-gradient-to: hsl(40, 84%, 53%);
+  --paper-gradient-from: hsl(230, 89%, 56%);
+  --paper-gradient-to: hsl(230, 89%, 65%);
+  --rock-gradient-from: hsl(349, 71%, 47%);
+  --rock-gradient-to: hsl(349, 70%, 56%);
+  --lizard-gradient-from: hsl(261, 73%, 55%);
+  --lizard-gradient-to: hsl(261, 72%, 63%);
+  --spock-gradient-from: hsl(189, 59%, 43%);
+  --spock-gradient-to: hsl(189, 58%, 57%);
+
+  /* Neutral */
+  --dark-text: hsl(229, 25%, 31%);
+  --score-text: hsl(229, 64%, 46%);
+  --header-outline: hsl(217, 16%, 45%);
+
+  /* Background */
+  --radial-gradient-from: hsl(214, 47%, 23%);
+  --radial-gradient-to: hsl(237, 49%, 15%);
+
+  --box-shadow-win: 0px 0px 0px 30px rgba(255, 255, 255, 0.05),
+    0px 0px 0px 60px rgba(255, 255, 255, 0.04),
+    0px 0px 0px 90px rgba(255, 255, 255, 0.03);
+
+  --box-shadow-win-mobile: 0px 0px 0px 15px rgba(255, 255, 255, 0.05),
+    0px 0px 0px 30px rgba(255, 255, 255, 0.04),
+    0px 0px 0px 45px rgba(255, 255, 255, 0.03);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+button {
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  background-image: radial-gradient(
+    circle at center top,
+    var(--radial-gradient-from) 20%,
+    var(--radial-gradient-to) 100%
+  );
+  background-repeat: no-repeat;
+}
+
+div.app {
+  max-width: 1366px;
+  min-height: calc(100vh - 30px);
+  margin: auto;
+}
+header div.logo-and-score {
+  max-width: 700px;
+  height: 150px;
+  margin: 30px auto;
+  border: 3px solid var(--header-outline);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 1.5rem;
+}
+
+header .score {
+  min-width: 150px;
+  min-height: 110px;
+  background: #fff;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+header .score .score-name {
+  color: var(--score-text);
+  font-size: 1.15rem;
+  letter-spacing: 2px;
+  margin-top: 8px;
+}
+
+header .score .score-value {
+  color: var(--dark-text);
+  font-size: 4rem;
+  margin-top: -10px;
+}
+
+header .score .lose-and-tied {
+  margin-top: -12px;
+  display: flex;
+  justify-content: space-around;
+}
+
+header .score .lose-and-tied-text {
+  color: var(--score-text);
+}
+
+header .score .lose-and-tied-score {
+  color: var(--dark-text);
+}
+
+main {
+  position: relative;
+}
+
+main .game {
+  max-width: 500px;
+  min-height: 440px;
+  margin: auto;
+  background-image: url("./../../images/bg-pentagon.svg");
+  background-repeat: no-repeat;
+  background-size: 350px;
+  background-position: center 40px;
+}
+
+main .game .game-buttons {
+  width: 100%;
+  height: 33.3%;
+  display: flex;
+}
+main .game .game-line-1 {
+  justify-content: center;
+}
+main .game .game-line-2 {
+  justify-content: space-between;
+}
+main .game .game-line-3 {
+  justify-content: space-around;
+}
+
+main .game .button-game-default,
+main .selected-button .button-picked-default {
+  width: 136px;
+  height: 136px;
+  border-radius: 50%;
+  border-color: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+
+main .game .button-game-default {
+  cursor: pointer;
+}
+
+main .game .button-game-img,
+main .selected-button .button-picked-default-img {
+  width: 102px;
+  height: 102px;
+  border-radius: 50%;
+  background: #eee;
+  box-shadow: 0px -6px 0px #ccc;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main .game .button-game-1 {
+  margin-top: -20px;
+}
+main .game .button-game-2 {
+  margin-top: -30px;
+  margin-left: 20px;
+}
+main .game .button-game-3 {
+  margin-top: -30px;
+  margin-right: 20px;
+}
+main .game .button-game-4 {
+  margin-top: 50px;
+  margin-left: 60px;
+}
+main .game .button-game-5 {
+  margin-top: 50px;
+  margin-right: 60px;
+}
+
+main .game .button-game-1:hover {
+  box-shadow: 0px 7px 0px var(--scissors-gradient-from),
+    0px 3.5px 0px 10px rgba(255, 255, 255, 0.2);
+}
+main .game .button-game-2:hover {
+  box-shadow: 0px 7px 0px var(--spock-gradient-from),
+    0px 3.5px 0px 10px rgba(255, 255, 255, 0.2);
+}
+main .game .button-game-3:hover {
+  box-shadow: 0px 7px 0px var(--paper-gradient-from),
+    0px 3.5px 0px 10px rgba(255, 255, 255, 0.2);
+}
+main .game .button-game-4:hover {
+  box-shadow: 0px 7px 0px var(--lizard-gradient-from),
+    0px 3.5px 0px 10px rgba(255, 255, 255, 0.2);
+}
+main .game .button-game-5:hover {
+  box-shadow: 0px 7px 0px var(--rock-gradient-from),
+    0px 3.5px 0px 10px rgba(255, 255, 255, 0.2);
+}
+
+/*------------------------------------------------ > SELECTED BUTTON < -----------------------------------------------------------*/
+
+main .selected-button {
+  max-width: 700px;
+  min-height: 440px;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+main .selected-button div {
+  height: 100%;
+}
+
+main .selected-button .button-picked,
+main .selected-button .button-com-picked {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main .selected-button .button-picked-default {
+  width: 200px;
+  height: 200px;
+}
+
+main .selected-button .button-picked-default.animationRotate {
+  background: #444;
+  box-shadow: 0px 7px 0px #333;
+  animation: rotationPickedButton 0.7s infinite;
+}
+
+@keyframes rotationPickedButton {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(180deg);
+  }
+}
+
+main .selected-button .button-picked-default-img {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main .selected-button .button-picked-default-img img {
+  width: 70px;
+}
+
+/*-------------------------------------------------CLASSES GAME COLOR ------------------------------------------------*/
+main .color-game-0 {
+  background: var(--scissors-gradient-to) !important;
+  box-shadow: 0px 7px 0px var(--scissors-gradient-from);
+}
+main .color-game-1 {
+  background: var(--spock-gradient-to);
+  box-shadow: 0px 7px 0px var(--spock-gradient-from);
+}
+main .color-game-2 {
+  background: var(--paper-gradient-to);
+  box-shadow: 0px 7px 0px var(--paper-gradient-from);
+}
+main .color-game-3 {
+  background: var(--lizard-gradient-to);
+  box-shadow: 0px 7px 0px var(--lizard-gradient-from);
+}
+main .color-game-4 {
+  background: var(--rock-gradient-to);
+  box-shadow: 0px 7px 0px var(--rock-gradient-from);
+}
+
+main .selected-button .button-picked-default.color-game-0.shadow-win {
+  box-shadow: 0px 7px 0px var(--scissors-gradient-from), var(--box-shadow-win);
+}
+main .selected-button .button-picked-default.color-game-1.shadow-win {
+  box-shadow: 0px 7px 0px var(--spock-gradient-from), var(--box-shadow-win);
+}
+main .selected-button .button-picked-default.color-game-2.shadow-win {
+  box-shadow: 0px 7px 0px var(--paper-gradient-from), var(--box-shadow-win);
+}
+main .selected-button .button-picked-default.color-game-3.shadow-win {
+  box-shadow: 0px 7px 0px var(--lizard-gradient-from), var(--box-shadow-win);
+}
+main .selected-button .button-picked-default.color-game-4.shadow-win {
+  box-shadow: 0px 7px 0px var(--rock-gradient-from), var(--box-shadow-win);
+}
+/*-------------------------------------------------CLASSES GAME COLOR FIM------------------------------------------------*/
+
+main .selected-button h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+main .selected-button h2 {
+  font-size: 3rem;
+  color: #fff;
+  margin-top: 100px;
+  text-align: center;
+}
+
+main .selected-button button {
+  width: 200px;
+  background: #fff;
+  color: var(--dark-text);
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 12px 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+main .selected-button button.win:hover {
+  background: var(--spock-gradient-to);
+  color: #fff;
+}
+main .selected-button button.tied:hover {
+  background: var(--scissors-gradient-to);
+  color: #fff;
+}
+main .selected-button button.lose:hover {
+  background: var(--rock-gradient-to);
+  color: #fff;
+}
+
+div.app .button-rules {
+  position: absolute;
+  padding: 10px 30px;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  right: 50px;
+  bottom: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+div.app .button-rules:hover {
+  background: #fff;
+  color: var(--radial-gradient-from);
+}
+
+.modal-content {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content .modal {
+  background: #fff;
+  max-width: 400px;
+  padding: 30px 30px 50px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1rem;
+}
+.modal-content .modal .rules-button-close {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.modal-content .rules-button-close h2 {
+  color: var(--dark-text);
+  font-size: 2rem;
+}
+
+.modal-content .rules-button-close button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.modal-content.open-modal {
+  animation: openModalAnimation 0.3s;
+}
+
+@keyframes openModalAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content.close-modal {
+  animation: closeModalAnimation 0.3s;
+}
+
+@keyframes closeModalAnimation {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

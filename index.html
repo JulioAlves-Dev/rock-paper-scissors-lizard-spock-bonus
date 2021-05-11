@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <title>ROCK, PAPER, SCISSORS, LIZARD, SPOCK (BONUS)</title>
+</head>
+<body>
+  <div style="background-color: tomato; color:#FFF; text-align:center; padding: 5px 0;">In Development</div>
+  <div class="app">
+    <header>
+      <div class="logo-and-score">
+        <div class="logo">
+          <img src="./images/logo-bonus.svg" alt="Logo">
+        </div>
+        <div class="score">
+          <div class="score-name">
+            SCORE
+          </div>
+          <div class="score-value" data-value>
+            0
+          </div>
+          <div class="lose-and-tied">
+            <span class="lose-and-tied-text">TIED: <span class="lose-and-tied-score" data-tied>0</span></span>
+            <span class="lose-and-tied-text">LOSE: <span class="lose-and-tied-score" data-lose>0</span></span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="game">
+        <div class="game-buttons game-line-1">
+          <div class="button-game-default button-game-1 color-game-0">
+            <div class="button-game-img">
+              <img src="./images/icon-scissors.svg" alt="Scissors" />
+            </div>
+          </div>
+        </div>
+        <div class="game-buttons game-line-2">
+          <div class="button-game-default button-game-2 color-game-1">
+            <div class="button-game-img">
+              <img src="./images/icon-spock.svg" alt="Spock" />
+            </div>
+          </div>
+          <div class="button-game-default button-game-3 color-game-2">
+            <div class="button-game-img">
+              <img src="./images/icon-paper.svg" alt="Paper" />
+            </div>
+          </div>
+        </div>
+        <div class="game-buttons game-line-3">
+          <div class="button-game-default button-game-4 color-game-3">
+            <div class="button-game-img">
+              <img src="./images/icon-lizard.svg" alt="Lizard" />
+            </div>
+          </div>
+          <div class="button-game-default button-game-5 color-game-4">
+            <div class="button-game-img">
+              <img src="./images/icon-rock.svg" alt="Rock" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="selected-button" style="display: none;">
+        <div class="button-picked">
+          <h3>YOU PICKED</h3>
+          <div class="button-picked-default">
+            <div class="button-picked-default-img">
+              <img src="./images/question-solid.svg" alt="Interrogation 1" />
+            </div>
+          </div>
+        </div>
+        <div class="button-play-again" style="display: none;">
+          <h2>YOU WIN</h2>
+          <button>PLAY AGAIN</button>
+        </div>
+        <div class="button-com-picked">
+          <h3>THE HOUSE PICKED</h3>
+          <div class="button-picked-default">
+            <div class="button-picked-default-img">
+              <img src="./images/question-solid.svg" alt="Interrogation 2" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="button-rules">RULES</button>
+    </main>
+  </div>
+  <div class="modal-content" style="display: none;">
+    <div class="modal">
+      <div class="rules-button-close">
+        <h2>RULES</h2>
+        <button>
+          <img src="./images/icon-close.svg" alt="Close">
+        </button>
+      </div>
+      <img src="./images/image-rules-bonus.svg" alt="Rules">
+    </div>
+  </div>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
