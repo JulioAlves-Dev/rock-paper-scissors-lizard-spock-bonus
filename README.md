@@ -1,6 +1,6 @@
-# Frontend Mentor - Rock, Paper, Scissors solution (Bonus)
+# Frontend Mentor - Rock, Paper, Scissors solution (Bônus)
 
-Esta é uma solução para o desafio [Rock, Paper, Scissors (Bonus) challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH) Os desafios do Frontend Mentor ajudam você a melhorar suas habilidades de codificação ao construir projetos realistas.
+Esta é uma solução para o desafio [Rock, Paper, Scissors (Bônus) challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH) Os desafios do Frontend Mentor ajudam você a melhorar suas habilidades de codificação ao construir projetos realistas.
 
 ## Índice
 
