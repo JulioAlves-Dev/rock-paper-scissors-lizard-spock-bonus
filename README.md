@@ -1,6 +1,6 @@
-# Frontend Mentor - Rock, Paper, Scissors solution
+# Frontend Mentor - Rock, Paper, Scissors solution (Bonus)
 
-Esta é uma solução para o desafio [Rock, Paper, Scissors challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH) Os desafios do Frontend Mentor ajudam você a melhorar suas habilidades de codificação ao construir projetos realistas.
+Esta é uma solução para o desafio [Rock, Paper, Scissors (Bonus) challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH) Os desafios do Frontend Mentor ajudam você a melhorar suas habilidades de codificação ao construir projetos realistas.
 
 ## Índice
 
@@ -25,16 +25,16 @@ Os usuários devem ser capazes de:
 
 ### Screenshot
 
-![](./screenshots/screenshot-1.png)
-![](./screenshots/screenshot-2.png)
-![](./screenshots/screenshot-3.png)
-![](./screenshots/screenshot-mobile-1.png)
-![](./screenshots/screenshot-mobile-2.png)
-![](./screenshots/screenshot-mobile-3.png)
+![](./screenshots/desktop-1.png)
+![](./screenshots/desktop-2.png)
+![](./screenshots/desktop-3.png)
+![](./screenshots/mobile-1.png)
+![](./screenshots/mobile-2.png)
+![](./screenshots/mobile-3.png)
 
 ### Links
 
-- URL do site ao vivo: [Link](https://julioalves-dev.github.io/rock-paper-scissors-challenge-on-frontend-mentor/)
+- URL do site ao vivo: [Link](https://julioalves-dev.github.io/rock-paper-scissors-lizard-spock-bonus/)
 
 ## Processo
 

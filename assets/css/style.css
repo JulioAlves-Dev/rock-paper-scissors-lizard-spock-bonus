@@ -411,12 +411,6 @@ div.app .button-rules:hover {
     margin-top: -3px;
     font-size: 12px;
   }
-  main {
-    position: static;
-  }
-  div.app {
-    position: relative;
-  }
   main .game {
     background-size: 260px;
     min-height: 350px;
@@ -460,20 +454,17 @@ div.app .button-rules:hover {
     height: 126px;
   }
   main .selected-button {
-    min-height: 220px;
-  }
-  main .selected-button {
+    min-height: 350px;
     grid-template-areas:
       "my com"
       "again again ";
-  }
-  main .selected-button button {
-    margin: auto;
-  }
-  main .selected-button {
     gap: 0px;
     row-gap: 10px;
     column-gap: 80px;
+  }
+
+  main .selected-button button {
+    margin: auto;
   }
   main .selected-button .button-picked,
   main .selected-button .button-com-picked {
@@ -624,6 +615,7 @@ div.app .button-rules:hover {
   .button-rules-div {
     display: flex;
     justify-content: center;
+    margin-top: 30px;
   }
   div.app .button-rules {
     position: static;
