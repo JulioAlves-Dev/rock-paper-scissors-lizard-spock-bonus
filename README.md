@@ -2,6 +2,9 @@
 
 Esta é uma solução para o desafio [Rock, Paper, Scissors (Bônus) challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH) Os desafios do Frontend Mentor ajudam você a melhorar suas habilidades de codificação ao construir projetos realistas.
 
+- Original:
+  - [Frontend Mentor -  Rock, Paper, Scissors](https://github.com/JulioAlves-Dev/rock-paper-scissors-challenge-on-frontend-mentor)
+
 ## Índice
 
 - [Visão geral](#visão-geral)
