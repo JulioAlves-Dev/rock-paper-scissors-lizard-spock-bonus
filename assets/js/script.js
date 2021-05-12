@@ -1,35 +1,30 @@
+// --->>> GAME <<<---
+
 const QS = (e) => document.querySelector(e),
-  QSA = (e) => document.querySelectorAll(e);
+  QSA = (e) => document.querySelectorAll(e),
+  buttonGame = QSA("main .game .button-game-default"),
+  game = QS("main .game"),
+  selectedButton = QS("main .selected-button"),
+  comPickedButton = selectedButton.querySelector(
+    ".button-com-picked .button-picked-default"
+  ),
+  youPickedButton = selectedButton.querySelector(
+    ".button-picked .button-picked-default"
+  ),
+  youPickedButtonIMG = youPickedButton.querySelector("img"),
+  comPickedButtonIMG = comPickedButton.querySelector("img"),
+  arrayNamesGame = ["scissors", "spock", "paper", "lizard", "rock"],
+  gamePlayAgain = selectedButton.querySelector(".button-play-again"),
+  buttonPlayAgain = gamePlayAgain.querySelector("button"),
+  scoreValue = QS("[data-value]"),
+  tiedValue = QS("[data-tied]"),
+  loseValue = QS("[data-lose]");
 
-const buttonGame = QSA("main .game .button-game-default");
-const game = QS("main .game");
-const selectedButton = QS("main .selected-button");
-const comPickedButton = selectedButton.querySelector(
-  ".button-com-picked .button-picked-default"
-);
-const youPickedButton = selectedButton.querySelector(
-  ".button-picked .button-picked-default"
-);
-
-console.log(comPickedButton);
-console.log(youPickedButton);
-const youPickedButtonIMG = youPickedButton.querySelector("img");
-const comPickedButtonIMG = comPickedButton.querySelector("img");
-const arrayNamesGame = ["scissors", "spock", "paper", "lizard", "rock"];
-
-const gamePlayAgain = selectedButton.querySelector(".button-play-again");
-const buttonPlayAgain = gamePlayAgain.querySelector("button");
-
-const scoreValue = QS("[data-value]");
-const tiedValue = QS("[data-tied]");
-const loseValue = QS("[data-lose]");
-
-let numberButtonSelected = 0;
-let numberComAleatory = 0;
-
-let score;
-let lose;
-let tied;
+let numberButtonSelected = 0,
+  numberComAleatory = 0,
+  score,
+  lose,
+  tied;
 
 if (localStorage.getItem("score")) {
   score = +localStorage.getItem("score");
@@ -51,11 +46,10 @@ if (localStorage.getItem("lose")) {
 } else {
   lose = 0;
 }
-
 function buttonSelected(index, numberAleatory) {
   buttonPlayAgain.addEventListener("click", PlayAgain);
   game.style.display = "none";
-  selectedButton.style.display = "flex";
+  selectedButton.style.display = "grid"; //AQUI <<<<<<<<<<<<<<<<<<<<<<<<
   youPickedButton.classList.add(`color-game-${index}`);
   youPickedButtonIMG.src = `./images/icon-${arrayNamesGame[index]}.svg`;
   youPickedButtonIMG.alt = arrayNamesGame[index];
@@ -65,7 +59,7 @@ function buttonSelected(index, numberAleatory) {
     comPickedButton.classList.add(`color-game-${numberAleatory}`);
     comPickedButtonIMG.src = `./images/icon-${arrayNamesGame[numberAleatory]}.svg`;
     comPickedButtonIMG.alt = arrayNamesGame[numberAleatory];
-    gamePlayAgain.style.display = "block";
+    gamePlayAgain.style.display = "flex";
     resultFinal();
   }, 2000);
 }
@@ -74,7 +68,6 @@ function PlayAgain() {
   game.style.display = "block";
   selectedButton.style.display = "none";
   gamePlayAgain.style.display = "none";
-
   youPickedButton.classList.remove(`color-game-${numberButtonSelected}`);
   youPickedButtonIMG.src = `./images/question-solid.svg`;
   comPickedButton.classList.remove(`color-game-${numberComAleatory}`);
@@ -86,8 +79,8 @@ function PlayAgain() {
 }
 
 function resultFinal() {
-  const myGame = arrayNamesGame[numberButtonSelected];
-  const COMGame = arrayNamesGame[numberComAleatory];
+  const myGame = arrayNamesGame[numberButtonSelected],
+    COMGame = arrayNamesGame[numberComAleatory];
   let resultGame = "";
 
   buttonPlayAgain.classList.remove("win");
@@ -115,7 +108,6 @@ function winGame() {
   localStorage.setItem("score", score);
   gamePlayAgain.querySelector("h2").innerText = "YOU WIN";
   buttonPlayAgain.classList.add("win");
-
   youPickedButton.classList.add("shadow-win");
 }
 
@@ -133,7 +125,6 @@ function loseGame() {
   localStorage.setItem("lose", lose);
   gamePlayAgain.querySelector("h2").innerText = "YOU LOSE";
   buttonPlayAgain.classList.add("lose");
-
   comPickedButton.classList.add("shadow-win");
 }
 
@@ -146,20 +137,21 @@ buttonGame.forEach((e, index) => {
   });
 });
 
-const modal = QS(".modal-content");
-const buttonCloseModal = modal.querySelector(".modal button");
-const buttonOpenModal = QS("div.app .button-rules");
+// --->>> MODAL <<<---
+
+const modal = QS(".modal-content"),
+  buttonCloseModal = modal.querySelectorAll(".modal button"),
+  buttonOpenModal = QS("div.app .button-rules");
 
 buttonOpenModal.addEventListener("click", () => {
   modal.style.display = "flex";
   modal.classList.remove("close-modal");
   modal.classList.add("open-modal");
 });
-
-buttonCloseModal.addEventListener("click", () => {
-  modal.classList.remove("open-modal");
-  modal.classList.add("close-modal");
-  setTimeout(() => {
-    modal.style.display = "none";
-  }, 300);
+buttonCloseModal.forEach((e) => {
+  e.addEventListener("click", () => {
+    modal.classList.remove("open-modal");
+    modal.classList.add("close-modal");
+    setTimeout(() => (modal.style.display = "none"), 300);
+  });
 });

@@ -28,7 +28,6 @@
     0px 0px 0px 30px rgba(255, 255, 255, 0.04),
     0px 0px 0px 45px rgba(255, 255, 255, 0.03);
 }
-
 * {
   margin: 0;
   padding: 0;
@@ -46,7 +45,6 @@ body {
   );
   background-repeat: no-repeat;
 }
-
 div.app {
   max-width: 1366px;
   min-height: calc(100vh - 30px);
@@ -63,7 +61,6 @@ header div.logo-and-score {
   justify-content: space-between;
   padding: 0px 1.5rem;
 }
-
 header .score {
   min-width: 150px;
   min-height: 110px;
@@ -71,38 +68,31 @@ header .score {
   border-radius: 0.5rem;
   text-align: center;
 }
-
 header .score .score-name {
   color: var(--score-text);
   font-size: 1.15rem;
   letter-spacing: 2px;
   margin-top: 8px;
 }
-
 header .score .score-value {
   color: var(--dark-text);
   font-size: 4rem;
   margin-top: -10px;
 }
-
 header .score .lose-and-tied {
   margin-top: -12px;
   display: flex;
   justify-content: space-around;
 }
-
 header .score .lose-and-tied-text {
   color: var(--score-text);
 }
-
 header .score .lose-and-tied-score {
   color: var(--dark-text);
 }
-
 main {
   position: relative;
 }
-
 main .game {
   max-width: 500px;
   min-height: 440px;
@@ -112,7 +102,6 @@ main .game {
   background-size: 350px;
   background-position: center 40px;
 }
-
 main .game .game-buttons {
   width: 100%;
   height: 33.3%;
@@ -127,23 +116,19 @@ main .game .game-line-2 {
 main .game .game-line-3 {
   justify-content: space-around;
 }
-
 main .game .button-game-default,
 main .selected-button .button-picked-default {
   width: 136px;
   height: 136px;
   border-radius: 50%;
-  border-color: none;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: 0.3s;
 }
-
 main .game .button-game-default {
   cursor: pointer;
 }
-
 main .game .button-game-img,
 main .selected-button .button-picked-default-img {
   width: 102px;
@@ -156,7 +141,6 @@ main .selected-button .button-picked-default-img {
   justify-content: center;
   align-items: center;
 }
-
 main .game .button-game-1 {
   margin-top: -20px;
 }
@@ -176,7 +160,6 @@ main .game .button-game-5 {
   margin-top: 50px;
   margin-right: 60px;
 }
-
 main .game .button-game-1:hover {
   box-shadow: 0px 7px 0px var(--scissors-gradient-from),
     0px 3.5px 0px 10px rgba(255, 255, 255, 0.2);
@@ -197,21 +180,31 @@ main .game .button-game-5:hover {
   box-shadow: 0px 7px 0px var(--rock-gradient-from),
     0px 3.5px 0px 10px rgba(255, 255, 255, 0.2);
 }
-
 /*------------------------------------------------ > SELECTED BUTTON < -----------------------------------------------------------*/
-
 main .selected-button {
   max-width: 700px;
   min-height: 440px;
   margin: auto;
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-areas: "my again com";
+  justify-content: center;
+  gap: 50px;
 }
-
+#my-selected {
+  grid-area: my;
+}
+#play-again {
+  grid-area: again;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#com-selected {
+  grid-area: com;
+}
 main .selected-button div {
   height: 100%;
 }
-
 main .selected-button .button-picked,
 main .selected-button .button-com-picked {
   display: flex;
@@ -219,18 +212,15 @@ main .selected-button .button-com-picked {
   justify-content: center;
   align-items: center;
 }
-
 main .selected-button .button-picked-default {
   width: 200px;
   height: 200px;
 }
-
 main .selected-button .button-picked-default.animationRotate {
   background: #444;
   box-shadow: 0px 7px 0px #333;
   animation: rotationPickedButton 0.7s infinite;
 }
-
 @keyframes rotationPickedButton {
   from {
     transform: rotateY(0deg);
@@ -239,7 +229,6 @@ main .selected-button .button-picked-default.animationRotate {
     transform: rotateY(180deg);
   }
 }
-
 main .selected-button .button-picked-default-img {
   width: 150px;
   height: 150px;
@@ -247,11 +236,9 @@ main .selected-button .button-picked-default-img {
   justify-content: center;
   align-items: center;
 }
-
 main .selected-button .button-picked-default-img img {
   width: 70px;
 }
-
 /*-------------------------------------------------CLASSES GAME COLOR ------------------------------------------------*/
 main .color-game-0 {
   background: var(--scissors-gradient-to) !important;
@@ -273,7 +260,6 @@ main .color-game-4 {
   background: var(--rock-gradient-to);
   box-shadow: 0px 7px 0px var(--rock-gradient-from);
 }
-
 main .selected-button .button-picked-default.color-game-0.shadow-win {
   box-shadow: 0px 7px 0px var(--scissors-gradient-from), var(--box-shadow-win);
 }
@@ -290,7 +276,6 @@ main .selected-button .button-picked-default.color-game-4.shadow-win {
   box-shadow: 0px 7px 0px var(--rock-gradient-from), var(--box-shadow-win);
 }
 /*-------------------------------------------------CLASSES GAME COLOR FIM------------------------------------------------*/
-
 main .selected-button h3 {
   text-align: center;
   margin-bottom: 2rem;
@@ -298,14 +283,11 @@ main .selected-button h3 {
   font-size: 1.25rem;
   font-weight: 600;
 }
-
 main .selected-button h2 {
   font-size: 3rem;
   color: #fff;
-  margin-top: 100px;
   text-align: center;
 }
-
 main .selected-button button {
   width: 200px;
   background: #fff;
@@ -318,7 +300,6 @@ main .selected-button button {
   cursor: pointer;
   transition: 0.3s;
 }
-
 main .selected-button button.win:hover {
   background: var(--spock-gradient-to);
   color: #fff;
@@ -331,7 +312,6 @@ main .selected-button button.lose:hover {
   background: var(--rock-gradient-to);
   color: #fff;
 }
-
 div.app .button-rules {
   position: absolute;
   padding: 10px 30px;
@@ -350,7 +330,6 @@ div.app .button-rules:hover {
   background: #fff;
   color: var(--radial-gradient-from);
 }
-
 .modal-content {
   width: 100vw;
   height: 100vh;
@@ -362,7 +341,6 @@ div.app .button-rules:hover {
   justify-content: center;
   align-items: center;
 }
-
 .modal-content .modal {
   background: #fff;
   max-width: 400px;
@@ -378,22 +356,18 @@ div.app .button-rules:hover {
   justify-content: space-between;
   margin-bottom: 30px;
 }
-
 .modal-content .rules-button-close h2 {
   color: var(--dark-text);
   font-size: 2rem;
 }
-
-.modal-content .rules-button-close button {
+.modal-content button {
   border: none;
   background: transparent;
   cursor: pointer;
 }
-
 .modal-content.open-modal {
   animation: openModalAnimation 0.3s;
 }
-
 @keyframes openModalAnimation {
   from {
     opacity: 0;
@@ -402,16 +376,303 @@ div.app .button-rules:hover {
     opacity: 1;
   }
 }
-
 .modal-content.close-modal {
   animation: closeModalAnimation 0.3s;
 }
-
 @keyframes closeModalAnimation {
   from {
     opacity: 1;
   }
   to {
     opacity: 0;
+  }
+}
+@media (max-width: 800px) {
+  header div.logo-and-score {
+    max-width: 500px;
+    height: 120px;
+  }
+  header div.logo-and-score img {
+    width: 86px;
+  }
+  header .score .score-value {
+    font-size: 2.8rem;
+    margin-top: -3px;
+  }
+  header .score {
+    min-height: 90px;
+    min-width: 120px;
+  }
+  header .score .score-name {
+    font-size: 1rem;
+    margin-top: 4px;
+  }
+  header .score .lose-and-tied {
+    margin-top: -3px;
+    font-size: 12px;
+  }
+  main {
+    position: static;
+  }
+  div.app {
+    position: relative;
+  }
+  main .game {
+    background-size: 260px;
+    min-height: 350px;
+  }
+  main .game .button-game-default,
+  main .selected-button .button-picked-default {
+    width: 110px;
+    height: 110px;
+  }
+  main .game .button-game-img,
+  main .selected-button .button-picked-default-img {
+    width: 86px;
+    height: 86px;
+  }
+  main .game .button-game-1 {
+    margin-top: -5px;
+  }
+  main .game .button-game-2 {
+    margin-left: 70px;
+  }
+  main .game .button-game-3 {
+    margin-right: 70px;
+  }
+  main .game .button-game-4 {
+    margin-top: 30px;
+    margin-left: 100px;
+  }
+  main .game .button-game-5 {
+    margin-top: 30px;
+    margin-right: 100px;
+  }
+  main .button-game-img img {
+    width: 40px;
+  }
+  main .selected-button .button-picked-default {
+    width: 160px;
+    height: 160px;
+  }
+  main .selected-button .button-picked-default-img {
+    width: 126px;
+    height: 126px;
+  }
+  main .selected-button {
+    min-height: 220px;
+  }
+  main .selected-button {
+    grid-template-areas:
+      "my com"
+      "again again ";
+  }
+  main .selected-button button {
+    margin: auto;
+  }
+  main .selected-button {
+    gap: 0px;
+    row-gap: 10px;
+    column-gap: 80px;
+  }
+  main .selected-button .button-picked,
+  main .selected-button .button-com-picked {
+    flex-direction: column-reverse;
+  }
+  main .selected-button h3 {
+    margin: 30px 0px;
+  }
+}
+@media (max-width: 570px) {
+  header div.logo-and-score {
+    max-width: 315px;
+    height: 100px;
+  }
+  header div.logo-and-score img {
+    width: 50px;
+  }
+  header .score {
+    min-height: initial;
+    min-width: initial;
+    height: 72px;
+    width: 100px;
+  }
+  header .score .score-name {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+  }
+  header .score .score-value {
+    font-size: 2.1rem;
+    margin-top: -5px;
+  }
+  header .score .lose-and-tied {
+    margin-top: -1px;
+    font-size: 10px;
+  }
+  main .game {
+    background-size: 220px;
+  }
+  main .game .button-game-default,
+  main .selected-button .button-picked-default {
+    width: 100px;
+    height: 100px;
+  }
+  main .game .button-game-img,
+  main .selected-button .button-picked-default-img {
+    width: 78px;
+    height: 78px;
+  }
+  main .color-game-0 {
+    background: var(--scissors-gradient-to) !important;
+    box-shadow: 0px 4px 0px var(--scissors-gradient-from);
+  }
+  main .color-game-1 {
+    background: var(--spock-gradient-to);
+    box-shadow: 0px 4px 0px var(--spock-gradient-from);
+  }
+  main .color-game-2 {
+    background: var(--paper-gradient-to);
+    box-shadow: 0px 4px 0px var(--paper-gradient-from);
+  }
+  main .color-game-3 {
+    background: var(--lizard-gradient-to);
+    box-shadow: 0px 4px 0px var(--lizard-gradient-from);
+  }
+  main .color-game-4 {
+    background: var(--rock-gradient-to);
+    box-shadow: 0px 4px 0px var(--rock-gradient-from);
+  }
+  main .selected-button .button-picked-default.color-game-0.shadow-win {
+    box-shadow: 0px 4px 0px var(--scissors-gradient-from), var(--box-shadow-win);
+  }
+  main .selected-button .button-picked-default.color-game-1.shadow-win {
+    box-shadow: 0px 4px 0px var(--spock-gradient-from), var(--box-shadow-win);
+  }
+  main .selected-button .button-picked-default.color-game-2.shadow-win {
+    box-shadow: 0px 4px 0px var(--paper-gradient-from), var(--box-shadow-win);
+  }
+  main .selected-button .button-picked-default.color-game-3.shadow-win {
+    box-shadow: 0px 4px 0px var(--lizard-gradient-from), var(--box-shadow-win);
+  }
+  main .selected-button .button-picked-default.color-game-4.shadow-win {
+    box-shadow: 0px 4px 0px var(--rock-gradient-from), var(--box-shadow-win);
+  }
+  main .game .button-game-img,
+  main .selected-button .button-picked-default-img {
+    margin-top: 6px;
+    box-shadow: 0px -4px 0px #ccc;
+  }
+  main .game .button-game-2 {
+    margin-left: 90px;
+  }
+  main .game .button-game-3 {
+    margin-right: 90px;
+  }
+  main .game .button-game-4 {
+    margin-left: 116px;
+  }
+  main .game .button-game-5 {
+    margin-right: 116px;
+  }
+  main .button-game-img img {
+    width: 34px;
+  }
+}
+@media (max-width: 450px) {
+  main .game {
+    min-height: 320px;
+  }
+  main .game .button-game-default,
+  main .selected-button .button-picked-default {
+    width: 90px;
+    height: 90px;
+  }
+  main .game .button-game-img,
+  main .selected-button .button-picked-default-img {
+    width: 70px;
+    height: 70px;
+  }
+  main .game .button-game-2 {
+    margin-left: 66px;
+  }
+  main .game .button-game-3 {
+    margin-right: 66px;
+  }
+  main .game .button-game-4 {
+    margin-left: 96px;
+  }
+  main .game .button-game-5 {
+    margin-right: 96px;
+  }
+  main .selected-button .button-picked-default {
+    width: 120px;
+    height: 120px;
+  }
+  main .selected-button .button-picked-default-img {
+    width: 90px;
+    height: 90px;
+  }
+  main .selected-button h3 {
+    font-size: 0.8rem;
+  }
+  main .selected-button .button-picked-default-img img {
+    width: 50px;
+  }
+  main .selected-button {
+    column-gap: 40px;
+  }
+  .button-rules-div {
+    display: flex;
+    justify-content: center;
+  }
+  div.app .button-rules {
+    position: static;
+  }
+  .modal-content .modal {
+    justify-content: space-between;
+  }
+  .modal-content .modal .rules-button-close {
+    justify-content: center;
+    margin-bottom: 0;
+  }
+  .modal-content .modal {
+    max-width: initial;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+  .modal-content .rules-button-close button {
+    display: none;
+  }
+  .modal img#img-rules {
+    width: 90%;
+  }
+}
+@media (max-width: 375px) {
+  main .game .button-game-2 {
+    margin-left: 46px;
+  }
+  main .game .button-game-3 {
+    margin-right: 46px;
+  }
+  main .game .button-game-4 {
+    margin-left: 76px;
+  }
+  main .game .button-game-5 {
+    margin-right: 76px;
+  }
+}
+@media (max-width: 340px) {
+  main .game .button-game-2 {
+    margin-left: 20px;
+  }
+  main .game .button-game-3 {
+    margin-right: 20px;
+  }
+  main .game .button-game-4 {
+    margin-left: 54px;
+  }
+  main .game .button-game-5 {
+    margin-right: 54px;
   }
 }

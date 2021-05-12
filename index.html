@@ -11,7 +11,6 @@
   <title>ROCK, PAPER, SCISSORS, LIZARD, SPOCK (BONUS)</title>
 </head>
 <body>
-  <div style="background-color: tomato; color:#FFF; text-align:center; padding: 5px 0;">In Development</div>
   <div class="app">
     <header>
       <div class="logo-and-score">
@@ -67,7 +66,7 @@
         </div>
       </div>
       <div class="selected-button" style="display: none;">
-        <div class="button-picked">
+        <div class="button-picked" id="my-selected">
           <h3>YOU PICKED</h3>
           <div class="button-picked-default">
             <div class="button-picked-default-img">
@@ -75,11 +74,11 @@
             </div>
           </div>
         </div>
-        <div class="button-play-again" style="display: none;">
+        <div class="button-play-again" id="play-again" style="display: none;">
           <h2>YOU WIN</h2>
           <button>PLAY AGAIN</button>
         </div>
-        <div class="button-com-picked">
+        <div class="button-com-picked" id="com-selected">
           <h3>THE HOUSE PICKED</h3>
           <div class="button-picked-default">
             <div class="button-picked-default-img">
@@ -88,7 +87,9 @@
           </div>
         </div>
       </div>
-      <button class="button-rules">RULES</button>
+      <div class="button-rules-div">
+        <button class="button-rules">RULES</button>
+      </div>
     </main>
   </div>
   <div class="modal-content" style="display: none;">
@@ -99,7 +100,10 @@
           <img src="./images/icon-close.svg" alt="Close">
         </button>
       </div>
-      <img src="./images/image-rules-bonus.svg" alt="Rules">
+      <img src="./images/image-rules-bonus.svg" alt="Rules" id="img-rules">
+      <button class="button-close-modal-mobile">
+        <img src="./images/icon-close.svg" alt="Close">
+      </button>
     </div>
   </div>
   <script src="assets/js/script.js"></script>
